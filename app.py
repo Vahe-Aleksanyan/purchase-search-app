@@ -7,6 +7,7 @@ import tempfile
 
 DB = Path("data/purchases.db")
 st.set_page_config(page_title="Գնումների որոնում", layout="wide")
+
 pd.set_option("display.max_colwidth", 100)
 
 # --- Բրենդինգ ---
@@ -14,6 +15,21 @@ pd.set_option("display.max_colwidth", 100)
 st.title("🛒 Գնումների փնտրում")
 st.caption("Որոնեք ապրանքներ՝ ըստ անվանումի, կոդի կամ մատակարարի, և վերբեռնեք Excel փաստաթղթեր:")
 st.markdown("---")
+# st.markdown("""
+#     <style>
+#         /* Shrink the sidebar width */
+#         section[data-testid="stSidebar"] {
+#             min-width: 190px !important;
+#             max-width: 200px !important;
+#             width: 160px !important;
+#         }
+#
+#         /* Optional: reduce padding inside sidebar */
+#         .css-1d391kg {
+#             padding: 0.5rem !important;
+#         }
+#     </style>
+# """, unsafe_allow_html=True)
 
 
 def normalize(text):
@@ -96,3 +112,12 @@ with tab3:
         st.dataframe(localize_columns(filtered.drop(columns=["__norm__"])), use_container_width=True)
 
 st.markdown("---")
+st.markdown("""
+    <style>
+    div[data-baseweb="input"] > div {
+        border: 2px solid black !important;
+        border-radius: 5px;
+        padding: 4px;
+    }
+    </style>
+""", unsafe_allow_html=True)
