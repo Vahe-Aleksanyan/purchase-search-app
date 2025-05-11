@@ -15,22 +15,6 @@ pd.set_option("display.max_colwidth", 100)
 st.title("🛒 Գնումների փնտրում")
 st.caption("Որոնեք ապրանքներ՝ ըստ անվանումի, կոդի կամ մատակարարի, և վերբեռնեք Excel փաստաթղթեր:")
 st.markdown("---")
-# st.markdown("""
-#     <style>
-#         /* Shrink the sidebar width */
-#         section[data-testid="stSidebar"] {
-#             min-width: 190px !important;
-#             max-width: 200px !important;
-#             width: 160px !important;
-#         }
-#
-#         /* Optional: reduce padding inside sidebar */
-#         .css-1d391kg {
-#             padding: 0.5rem !important;
-#         }
-#     </style>
-# """, unsafe_allow_html=True)
-
 
 def normalize(text):
     if not text:
